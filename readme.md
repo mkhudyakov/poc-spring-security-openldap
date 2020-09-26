@@ -23,12 +23,3 @@ Once started go to `http://localhost:8080/restricted` and use `developer/develop
 ```
 docker-compose down
 ```
-
-
-
-
-
-
-```
-mvn jetty:run
-```
