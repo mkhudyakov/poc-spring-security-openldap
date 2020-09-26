@@ -1,0 +1,15 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="contextSource" class="org.springframework.ldap.core.support.LdapContextSource">
+        <property name="url" value="${spring.ldap.url}" />
+        <property name="userDn" value="${spring.ldap.username}" />
+        <property name="password" value="${spring.ldap.password}" />
+    </bean>
+
+    <bean id="ldapTemplate" class="org.springframework.ldap.core.LdapTemplate">
+        <property name="contextSource" ref="contextSource" />
+    </bean>
+</beans>

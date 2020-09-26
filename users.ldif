@@ -1,0 +1,42 @@
+dn: ou=Users,dc=openldap,dc=spring,dc=poc,dc=com
+changetype: add
+objectclass: organizationalUnit
+ou: Users
+
+dn: cn=developer,ou=Users,dc=openldap,dc=spring,dc=poc,dc=com
+changetype: add
+objectclass: inetOrgPerson
+cn: developer
+givenname: developer
+sn: Developer
+displayname: Developer User
+mail: developer@gmail.com
+userpassword: developer
+
+dn: cn=maintainer,ou=Users,dc=openldap,dc=spring,dc=poc,dc=com
+changetype: add
+objectclass: inetOrgPerson
+cn: maintainer
+givenname: maintainer
+sn: Maintainer
+displayname: Maintainer User
+mail: maintainer@gmail.com
+userpassword: maintainer
+
+dn: ou=Groups,dc=openldap,dc=spring,dc=poc,dc=com
+changetype: add
+objectclass: organizationalUnit
+ou: Groups
+
+dn: cn=Admins,ou=Groups,dc=openldap,dc=spring,dc=poc,dc=com
+changetype: add
+cn: Admins
+objectclass: groupOfUniqueNames
+uniqueMember: cn=admin,dc=openldap,dc=spring,dc=poc,dc=com
+
+dn: cn=Maintainers,ou=Groups,dc=openldap,dc=spring,dc=poc,dc=com
+changetype: add
+cn: Maintainers
+objectclass: groupOfUniqueNames
+uniqueMember: cn=maintainer,ou=Users,dc=openldap,dc=spring,dc=poc,dc=com
+uniqueMember: cn=developer,ou=Users,dc=openldap,dc=spring,dc=poc,dc=com
